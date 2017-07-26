@@ -7,7 +7,7 @@ From: ubuntu:16.04
   cp singularityexec $SINGULARITY_ROOTFS/
 
 
-% post
+%post
 
   apt-get update
   apt-get install -y fortune cowsay lolcat
