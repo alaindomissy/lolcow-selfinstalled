@@ -4,7 +4,7 @@ From: ubuntu:16.04
 
 %setup
 
-  cp lolcow.sh $SINGULARITY_ROOTFS/
+  cp singularityexec $SINGULARITY_ROOTFS/
 
 
 % post
@@ -30,15 +30,14 @@ From: ubuntu:16.04
   
   mkdir ~/lolcow
 
-  cp *-master.img ~/lolcow/image
+  cp *-master.img ~/lolcow/lolcow.img
+  cp /singularityexec ~/lolcow/
 
-  cd ~/lolcow
-  cp /lolcow.sh   ./
-  chmod 755 lolcow.sh
+  #chmod 755 ~/lolcow/singularityexec
 
-  ln -s lolcow.sh fortune
-  ln -s lolcow.sh cowsay
-  ln -s lolcow.sh lolcat
+  ln -s ~/lolcow/singularityexec ~/lolcow/fortune
+  ln -s ~/lolcow/singularityexec ~/lolcow/cowsay
+  ln -s ~/lolcow/singularityexec ~/lolcow/lolcat
 
   echo \
   'type "export PATH=~/lolcow:$PATH" and enjoy fortune, cowsay, and lolcat!' \

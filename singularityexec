@@ -7,4 +7,5 @@ DIR=$(dirname  "$0")
 CMD=$(basename "$0")
 ARG="$@"
 
-singularity exec $dir/image $CMD $ARG
+# $DIR would not be needed if lolcow.img is exectubale and on the path
+singularity exec $DIR/lolcow.img $CMD $ARG
